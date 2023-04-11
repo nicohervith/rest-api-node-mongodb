@@ -1,15 +1,15 @@
 {
   "name": "products-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Rest api",
   "main": "index.js",
+  "type" : "module",
   "scripts": {
-    "build": "babel src --out-dir build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.js --exec babel-node",
-    "start": "node build/index.js "
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
   },
-  "author": "",
+  "author": "Nicolás",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

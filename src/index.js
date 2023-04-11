@@ -1,7 +1,6 @@
-import express from "express";
+import app from "./app.js";
+import "./database.js";
+import { PORT } from "./config.js";
 
-const app = express();
-
-app.listen(3000);
-
-console.log("Server listening on port ", 3000);
+app.listen(PORT);
+console.log("Server on port", app.get("port"));
