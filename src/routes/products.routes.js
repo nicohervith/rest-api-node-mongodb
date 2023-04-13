@@ -9,15 +9,14 @@ import {
 } from "../controllers/products.controller.js";
 const router = Router();
 
-
 router.get("/", getProducts);
 
 router.get("/:productId", getProductById);
 
-router.post("/",/*  [verifyToken, isModerator],  */createProduct);
+router.post("/", [verifyToken, isModerator], createProduct);
 
-router.put("/:productId", /* [verifyToken, isModerator] ,*/updateProductById);
+router.put("/:productId", [verifyToken, isModerator], updateProductById);
 
-router.delete("/:productId", /* [verifyToken, isAdmin],  */deleteProductById);
+router.delete("/:productId", [verifyToken, isAdmin], deleteProductById);
 
 export default router;

@@ -29,12 +29,15 @@ const productSchema = new mongoose.Schema(
   }
 );
 
+//Cifrar contraseña
 productSchema.statics.encryptPassword = async (password) => {
+  //genSalt aplica el algoritmo para el cifrado
   const salt = await bcrypt.genSalt(10);
   return await bcrypt.hash(password, salt);
 };
-
+//Comparar contraseña
 productSchema.statics.comparePassword = async (password, receivedPassword) => {
+  //Recibe la contraseña que ya se guardo y la contraseña que el usuario está tipeando
   return await bcrypt.compare(password, receivedPassword);
 };
 
